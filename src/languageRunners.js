@@ -60,6 +60,19 @@ export default class LanguageRunners {
 			description: 'Java compiler and runtime'
 		});
 
+				// Kotlin
+		this.#runners.set('kotlin', {
+			extensions: ['kt'],
+			commands: [
+				{
+					cmd: 'kotlinc "{file}" -include-runtime -d "{name}.jar" && java -jar "{name}.jar"',
+					checkCommand: 'kotlinc',
+					packages: []
+				}
+			],
+			description: 'Kotlin compiler and runtime'
+		});
+
 		// Go
 		this.#runners.set('go', {
 			extensions: ['go'],
